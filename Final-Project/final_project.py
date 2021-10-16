@@ -67,9 +67,8 @@ while True:
 	        penerima = filex.readlines()
        
     # Mengirim Email atau Gagal (Detail Sumber: https://stackoverflow.com/questions/10147455/how-to-send-an-email-with-gmail-as-provider-using-python)
-        i = 0
-        while i < len(penerima):
-            receiver = f"{penerima[i]}"
+        for y in range(len(penerima)):
+            receiver = f"{penerima[y]}"
             msg['To'] = receiver
             msg.attach(MIMEText(body, 'plain'))
            
@@ -84,11 +83,7 @@ while True:
                 print('Email sent!')
             except Exception as exception:
                 print("Error: %s!\n\n" % exception)
-            i += 1
-            if Exception:
-                continue
             
-
     elif menu == '4':
         print ("-----------------------------")
         print("Program selesai, sampai jumpa!")
